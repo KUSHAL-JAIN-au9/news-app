@@ -26,7 +26,7 @@ const HomePage = () => {
             {/* {newsData && <pre>{JSON.stringify(newsData, null, 2)}</pre>} */}
 
             <h1>Guardian API Data</h1>
-            {gaurdianData && <pre>{JSON.stringify(gaurdianData, null, 2)}</pre>}
+            {/* {gaurdianData && <pre>{JSON.stringify(gaurdianData, null, 2)}</pre>} */}
 
             {/* <h1>New York Times API Data</h1>
             {nytData && <pre>{JSON.stringify(nytData, null, 2)}</pre>} */}

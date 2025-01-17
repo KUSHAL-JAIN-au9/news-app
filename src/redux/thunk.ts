@@ -27,7 +27,19 @@ const generateThunk = (
       try {
         const response = await fetch(url);
         if (!response.ok) throw new Error(`Failed to fetch ${key} data`);
-        return await response.json();
+        const data = await response.json();
+
+        // Process the data based on the key or url
+        switch (key) {
+          case 'newsAPI':
+            return { news: data?.articles };
+          case 'gaurdianAPI':
+            return { guardian: data?.response.results };
+          case 'nytAPI':
+            return { nyt: data?.response?.docs };
+          default:
+            return data;
+        }
       } catch (error: any) {
         return rejectWithValue(error.message);
       }
