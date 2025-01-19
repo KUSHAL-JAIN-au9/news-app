@@ -2,6 +2,10 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ApiState, gaurdianAPI, newsAPI, nytAPI } from '../redux/apiSlice';
 import { AppDispatch, RootState } from '../redux/store';
+import newsAPIImage from '../assets/news.jpg';
+import guardianImage from '../assets/guardian.jpg';
+import nytImage from '../assets/nyt.jpg';
+import SourceItem from '../components/SorceItem';
 
 const HomePage = () => {
     const dispatch: AppDispatch = useDispatch();
@@ -15,21 +19,19 @@ const HomePage = () => {
         dispatch(nytAPI());
     }, [dispatch]);
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+    const SourceCards = [
+        { name: 'NewsAPI', data: 'Dive into the world’s most trusted news platforms.', image: newsAPIImage, path: '/news-api' },
+        { name: 'NewYork Times', data: 'Your gateway to stories that shape the world', image: nytImage, path: '/nyt-news' },
+        { name: 'The Guardian', data: 'View the world through The Guardian’s perspective', image: guardianImage, path: '/guardian-news' },
+    ]
+
+    if (loading) return <div className='h-[100vh] w-full grid place-items-center'> <span className="loading loading-ring loading-lg"></span></div>;
+    // if (error) return <p>Error: {error}</p>;
     console.log({ newsData, error, gaurdianData, nytData, loading });
     return (
-        <div className='bg-slate-500'>
-            <h1 className='text-red-950 font-extrabold'>Home Page</h1>
-            <p>Welcome to the Home Page!</p>
-            <h1>NewsAPI Data</h1>
-            {/* {newsData && <pre>{JSON.stringify(newsData, null, 2)}</pre>} */}
+        <div className=' flex flex-wrap justify-evenly items-center gap-8 mt-10 p-8'>
+            {SourceCards?.map(({ name, data, image, path }) => (<SourceItem name={name} description={data} url={image} path={path} />))}
 
-            <h1>Guardian API Data</h1>
-            {/* {gaurdianData && <pre>{JSON.stringify(gaurdianData, null, 2)}</pre>} */}
-
-            {/* <h1>New York Times API Data</h1>
-            {nytData && <pre>{JSON.stringify(nytData, null, 2)}</pre>} */}
         </div>
     );
 };

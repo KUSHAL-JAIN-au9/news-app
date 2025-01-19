@@ -4,6 +4,7 @@ import NewsApiPage from './pages/NewsApiPage'
 import HomePage from './pages/HomePage'
 import GuardianPage from './pages/GuardianPage'
 import NytPage from './pages/Nytpage'
+import Navbar from './components/Navbar'
 
 function App() {
 
@@ -28,11 +29,14 @@ function App() {
   ]
 
   return (
-    <Routes>
-      {routes.map((route, index) => (
-        <Route key={index} path={route.path} element={route.element} />
-      ))}
-    </Routes>
+    <div className='w-[100%]'>
+      <Navbar />
+      <Routes>
+        {routes.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
+        ))}
+      </Routes>
+    </div>
   )
 }
 

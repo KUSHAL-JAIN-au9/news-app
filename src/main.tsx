@@ -5,12 +5,15 @@ import App from './App.tsx'
 import { BrowserRouter, } from 'react-router'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.ts'
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Provider store={store}>
         <App />
+        <Tooltip id="my-tooltip" />
       </Provider>
     </BrowserRouter>
   </StrictMode>,

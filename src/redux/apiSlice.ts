@@ -5,7 +5,11 @@ import { handleThunk, thunks } from './thunk';
 export type ApiState = {
   loading: boolean;
   error: null;
-  [key: string]: string | number | boolean | null;
+  newsAPI?: {
+    news: []; // Replace `any` with the specific type for `news` if known
+  };
+} & {
+  [key: string]: string | number | boolean | null | undefined | { news: [] };
 };
 
 const apiSlice = createSlice({
