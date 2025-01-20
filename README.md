@@ -50,8 +50,8 @@ This project is a modern React application scaffolded using Vite, built with Typ
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/react-typescript-vite-app.git
-   cd react-typescript-vite-app
+   git clone https://github.com/KUSHAL-JAIN-au9/news-app.git
+   cd news-app
    ```
 ````
 
