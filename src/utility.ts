@@ -1,3 +1,4 @@
+//truncate a string
 export function truncateString(str: string, length: number = 20): string {
   if (str?.length <= length) {
     return str;
@@ -6,37 +7,7 @@ export function truncateString(str: string, length: number = 20): string {
   return output;
 }
 
-/**
- * Extracts specific keys from an array of objects.
- * @param data - The array of objects to extract keys from.
- * @param keys - The array of keys to extract.
- * @returns An array of objects containing only the specified keys.
- */
-// export function extractKeys(
-//   data: Array<{ [key: string]: string | object }>,
-//   keys: string[]
-// ): Array<{ [key: string]: string | object }> {
-//   return data.map((item) => {
-//     const result: { [key: string]: string | object } = {};
-//     keys.forEach((key) => {
-//       const keyParts = key.split('.');
-//       let value: { [key: string]: any } | undefined = item;
-//       for (const part of keyParts) {
-//         if (typeof value === 'object' && value !== null) {
-//           value = value[part];
-//         } else {
-//           value = undefined;
-//           break;
-//         }
-//       }
-//       if (value !== undefined) {
-//         result[key] = value;
-//       }
-//     });
-//     return result;
-//   });
-// }
-
+// function to extract keys
 export function extractKeys(
   data: Array<{ [key: string]: string }>,
   keys: string[]
@@ -52,13 +23,7 @@ export function extractKeys(
   });
 }
 
-/**
- * Filters an array of objects based on matched filters and a search query.
- * @param data - The array of objects to filter.
- * @param filters - An object where keys are the filter names and values are arrays of filter values.
- * @param searchQuery - The search query to filter the objects.
- * @returns The filtered array of objects.
- */
+// filterData based on the keys and search query
 export function filterData(
   data: Array<{ [key: string]: string | object }>,
   filters: { [key: string]: string },
