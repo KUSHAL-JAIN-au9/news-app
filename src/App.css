@@ -2,3 +2,10 @@
   /* max-width: 100%; */
   /* background-color: #f0f0f0; */
 }
+
+.banner-main-section {
+  @apply my-28 md:my-8 py-12 flex flex-col w-full mx-auto md:flex-row-reverse items-center justify-between gap-12  bg-cover  rounded-xl;
+}
+.banner-main-heading {
+  @apply text-3xl sm:text-4xl mb-4 font-semibold text-brandPrimary  md:w-3/4 leading-snug md:text-5xl;
+}
