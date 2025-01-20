@@ -12,7 +12,7 @@ interface NewsCardItemProps {
 const NewsCardItem: React.FC<NewsCardItemProps> = ({ title, description, imageUrl, articleUrl }) => {
     const [isImageBroken, setIsImageBroken] = useState(false);
 
-    return (<div className="card card-compact mx-4 my-4 w-72 sm:w-96 overflow-hidden shadow-lg bg-gray-800 text-white dark:shadow-white dark:bg-gray-900">
+    return (<div className="card card-compact mx-4 my-4 w-72 sm:w-96 overflow-hidden shadow-slate-400 bg-gray-800 text-white dark:shadow-white dark:bg-gray-900">
         <figure>
             {!isImageBroken ? <img
                 className='h-48 w-full object-cover'
@@ -23,7 +23,6 @@ const NewsCardItem: React.FC<NewsCardItemProps> = ({ title, description, imageUr
 
         </figure>
         <div className="card-body">
-
             <h2 className="card-title" data-tooltip-id="my-tooltip" data-tip="Tooltip content">{truncateString(title, 50)}</h2>
             <p className='text-gray-400 text-base'>{truncateString(description, 30)}</p>
             <div className="card-actions justify-end">

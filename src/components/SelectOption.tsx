@@ -22,7 +22,7 @@ const SelectOption: React.FC<SelectOptionProps> = ({ options, onChange, name, de
                 name={name}
                 onChange={(e) => onChange(e.target)}
             >
-                <option disabled selected hidden value={`Select a ${name}`} >
+                <option disabled selected value={`Select a ${name}`} >
                     {`Select a ${name}`}
                 </option>
                 {options.map((option, index) => (

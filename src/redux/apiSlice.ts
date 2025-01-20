@@ -6,7 +6,7 @@ export type ApiState = {
   loading: boolean;
   error: null;
   newsAPI?: {
-    news: []; // Replace `any` with the specific type for `news` if known
+    news: [];
   };
 } & {
   [key: string]: string | number | boolean | null | undefined | { news: [] };

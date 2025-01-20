@@ -2,20 +2,22 @@
 // const NYT_API_KEY = process.env.REACT_APP_NYT_API_KEY;
 // const GUARDIAN_API_KEY = process.env.REACT_APP_GUARDIAN_API_KEY;
 
+import { guardianApiKey, newsApiKey, nytApiKey } from './config';
+
 export const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
 
 export const apiConfigs = [
   {
     key: 'newsAPI',
-    url: `https://newsapi.org/v2/everything?q=keyword&apiKey=603fc2b08dea422db8117a411f1807c8`,
+    url: `https://newsapi.org/v2/everything?q=keyword&apiKey=${newsApiKey}`,
   },
   {
     key: 'gaurdianAPI',
-    url: `https://content.guardianapis.com/search?api-key=1fe58b47-f5f8-42b2-8a0b-51d554a9845a`,
+    url: `https://content.guardianapis.com/search?api-key=${guardianApiKey}`,
   },
   {
     key: 'nytAPI',
-    url: `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=V6VQfOCu6we92G0rzcYkLegPFzDHLAFg`,
+    url: `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=${nytApiKey}`,
   },
 ];
 

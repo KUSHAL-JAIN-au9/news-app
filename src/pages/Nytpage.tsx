@@ -28,10 +28,18 @@ const NytPage: React.FC = () => {
     if (newsAPIData && typeof newsAPIData === 'object' && "nyt" in newsAPIData) {
         news = (newsAPIData.nyt as NewsItem[]);
     }
+    useEffect(() => {
+        document.querySelectorAll('.select-filters').forEach((select) => {
+            (select as HTMLSelectElement).value = (select.children[0] as HTMLOptionElement).value;
+
+        })
+    }, [])
+
 
     useEffect(() => {
         // Dispatch thunks to fetch data
         dispatch(nytAPI());
+
     }, [dispatch])
 
     const handleSelectChange = (e: { name: string, value: string },) => {
